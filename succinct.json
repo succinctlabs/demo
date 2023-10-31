@@ -5,8 +5,8 @@
             "name": "sha256",
             "framework": "plonky2x",
             "baseDir": ".",
-            "buildCommand": "",
-            "proveCommand": ""
+            "buildCommand": "cargo run --release --bin sha256 build && mv ./target/release/sha256 ./build/sha256",
+            "proveCommand": "RUST_LOG=debug ./build/sha256 prove input.json"
         }
     ]
 }
