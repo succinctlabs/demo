@@ -1,0 +1,18 @@
+[package]
+name = "succinct-examples"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ethers = "2.0.9"
+plonky2 = { git = "https://github.com/mir-protocol/plonky2.git", default-features = false}
+plonky2x = { git = "https://github.com/succinctlabs/succinctx.git", branch = "john/fix-validator-struct-v2" }
+dotenv = "0.15.0"
+env_logger = "0.10.0"
+itertools = "0.11.0"
+log = "0.4.20"
+
+[dev-dependencies]
+plonky2 = { git = "https://github.com/mir-protocol/plonky2.git", features = ["gate_testing"]}
