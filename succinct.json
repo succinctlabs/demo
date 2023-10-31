@@ -5,8 +5,8 @@
             "name": "succinct-alpha-demo",
             "framework": "plonky2x",
             "baseDir": ".",
-            "buildCommand": "cargo run --release build && mv ./target/release/succinct-alpha-demo ./build/succinct-alpha-demo",
-            "proveCommand": "RUST_LOG=debug ./build/succinct-alpha-demo prove input.json"
+            "buildCommand": "cargo run --package circuits --release build && mv ./target/release/circuits ./build/circuits",
+            "proveCommand": "RUST_LOG=debug ./build/circuits prove input.json"
         }
     ]
 }
