@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/succinctlabs/succinctx/main/assets/schema.json",
     "entrypoints": [
         {
-            "name": "ssz",
+            "name": "sha256",
             "framework": "plonky2x",
             "baseDir": ".",
             "buildCommand": "",

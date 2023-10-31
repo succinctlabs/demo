@@ -1,5 +1,5 @@
 [package]
-name = "succinct-examples"
+name = "examples"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 ethers = "2.0.9"
 plonky2 = { git = "https://github.com/mir-protocol/plonky2.git", default-features = false}
-plonky2x = { git = "https://github.com/succinctlabs/succinctx.git", branch = "john/fix-validator-struct-v2" }
+plonky2x = { git = "https://github.com/succinctlabs/succinctx.git" }
 dotenv = "0.15.0"
 env_logger = "0.10.0"
 itertools = "0.11.0"
@@ -16,3 +16,7 @@ log = "0.4.20"
 
 [dev-dependencies]
 plonky2 = { git = "https://github.com/mir-protocol/plonky2.git", features = ["gate_testing"]}
+
+[[bin]]
+name = "sha256"
+path = "bin/sha256.rs"
