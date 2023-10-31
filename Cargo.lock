@@ -1334,19 +1334,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "examples"
-version = "0.1.0"
-dependencies = [
- "dotenv",
- "env_logger",
- "ethers",
- "itertools 0.11.0",
- "log",
- "plonky2",
- "plonky2x",
-]
-
-[[package]]
 name = "eyre"
 version = "0.6.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3667,6 +3654,19 @@ name = "subtle-ng"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "734676eb262c623cec13c3155096e08d1f8f29adce39ba17948b18dad1e54142"
+
+[[package]]
+name = "succinct-alpha-demo"
+version = "0.1.0"
+dependencies = [
+ "dotenv",
+ "env_logger",
+ "ethers",
+ "itertools 0.11.0",
+ "log",
+ "plonky2",
+ "plonky2x",
+]
 
 [[package]]
 name = "svm-rs"
