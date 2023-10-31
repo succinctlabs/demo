@@ -1,7 +1,5 @@
 # Succinct Alpha Demo
 
-![Cover](https://i.imgur.com/Rml0HP4.png)
-
 **Welcome!** You've succesfully created the demo project. This project will demonstrate end-to-end 
 usage of the platform, including:
 
