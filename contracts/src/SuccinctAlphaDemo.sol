@@ -48,9 +48,10 @@ contract SuccinctAlphaDemo {
     }
 
     event HandledRequestProofCallback(
-        bytes32 indexed functionId,
-        address indexed sender,
-        bytes output
+        bytes32 functionId,
+        address sender,
+        bytes32 blockRoot,
+        uint64 sum
     );
 
     /// @notice Request a proof from the gateway contract for the demo.
@@ -63,7 +64,7 @@ contract SuccinctAlphaDemo {
         ISuccinctGateway(gateway).requestCallback(
             _functionId,
             abi.encodePacked(_blockRoot),
-            abi.encodePacked(_functionId, msg.sender),
+            abi.encode(_functionId, msg.sender, _blockRoot),
             this.handleRequestProofCallback.selector,
             200000
         );
@@ -80,14 +81,17 @@ contract SuccinctAlphaDemo {
             msg.sender == gateway && ISuccinctGateway(gateway).isCallback()
         );
 
-        bytes32 functionId;
-        address sender;
+        (bytes32 functionId, address sender, bytes32 blockRoot) = abi.decode(
+            _context,
+            (bytes32, address, bytes32)
+        );
+
+        uint64 result;
         assembly {
-            functionId := mload(add(_context, 0x20))
-            sender := shr(96, mload(add(add(_context, 0x20), 0x20)))
+            result := mload(add(_output, 0x08))
         }
 
-        emit HandledRequestProofCallback(functionId, sender, _output);
+        emit HandledRequestProofCallback(functionId, sender, blockRoot, result);
     }
 
     function withdraw() external onlyOwner {
