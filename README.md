@@ -1,5 +1,7 @@
 # Succinct Alpha Demo: Consensus Oracle
 
+**Go to the [Succinct platform](https://platform.succinct.xyz/) and login to [create a project](https://platform.succinct.xyz/new/project) and try out deploying this demo application.**
+
 **Welcome!** You've succesfully created the demo project. This project will demonstrate end-to-end 
 usage of the platform, including:
 
